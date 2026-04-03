@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Pro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo img { height: 40px; }
+
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: #fff; transition: color 0.3s; }
+    nav ul li a:hover { color: #ff4b2b; }
+
+    .dark-toggle {
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url("D:\2.jpeg") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h1 { font-size: 50px; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
+    .hero p { font-size: 20px; margin-bottom: 30px; max-width: 600px; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
+
+    .hero button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background: #ff4b2b;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .hero button:hover { background: #ff416c; }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: #f4f4f4;
+      gap: 30px;
+    }
+
+    .feature-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover { transform: translateY(-10px); }
+
+    .feature-box img { width: 60px; margin-bottom: 15px; }
+
+    .feature-box h3 { margin-bottom: 15px; color: #ff4b2b; }
+
+    .signup {
+      background: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 50px auto;
+      max-width: 500px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .signup h2 { margin-bottom: 20px; color: #111; }
+
+    .signup input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .signup button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      background: #ff4b2b;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .signup button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+      text-align: left;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body.dark { background-color: #111; color: #f4f4f4; }
+    body.dark .features, body.dark .signup { background-color: #222; }
+    body.dark nav { background-color: #000; }
+    body.dark .feature-box { background-color: #333; color: #fff; }
+
+    @media(max-width: 768px) {
+      nav { flex-direction: column; gap: 10px; }
+      .features { flex-direction: column; align-items: center; }
+      .hero h1 { font-size: 35px; }
+      .hero p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body style= "background-image:url("D:\2.jpeg");">
+
+<nav>
+  <div class="logo"><img src="D:\logo.png" alt="Logo"></div>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#signup">Sign Up</a></li>
+  </ul>
+  <div class="dark-toggle" onclick="toggleDark()">Dark Mode</div>
+</nav>
+
+<section class="hero">
+  <h1>Build Your Dream Website</h1>
+  <p>Create stunning, responsive, and modern websites with professional UI/UX design.</p>
+  <button onclick="scrollToFeatures()">Get Started</button>
+</section>
+
+<section class="features" id="features">
+  <div class="feature-box">
+    <img src="D:\r.jpg" alt="Responsive Design">
+    <h3>Responsive Design</h3>
+    <p>Websites look perfect on every device — desktop, tablet, and mobile.</p>
+  </div>
+  <div class="feature-box">
+    <img src="D:\M.jpg" alt="Modern UI">
+    <h3>Modern UI</h3>
+    <p>Clean, minimal, and attractive designs to impress visitors and clients.</p>
+  </div>
+  <div class="feature-box">
+    <img src="D:\F.jpg" alt="Fast & Optimized">
+    <h3>Fast & Optimized</h3>
+    <p>Lightning-fast performance and smooth interactions for better UX.</p>
+  </div>
+</section>
+
+<section class="signup" id="signup">
+  <h2>Sign Up for Updates</h2>
+  <form id="signupForm">
+    <input type="text" id="name" placeholder="Name">
+    <div class="error"></div>
+    <input type="text" id="email" placeholder="Email">
+    <div class="error"></div>
+    <input type="password" id="password" placeholder="Password">
+    <div class="error"></div>
+    <button type="submit" id="submitBtn" disabled>Sign Up</button>
+  </form>
+</section>
+
+<footer>
+  <p>Contact: m97829133@gmail.com | &copy; 2026 MalaikaDev</p>
+</footer>
+
+<script>
+function scrollToFeatures() {
+  document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+}
+function toggleDark() {
+  document.body.classList.toggle('dark');
+}
+
+const form = document.getElementById('signupForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const submitBtn = document.getElementById('submitBtn');
+const errors = document.querySelectorAll('.error');
+
+[nameInput,emailInput,passwordInput].forEach(input => input.addEventListener('input', validateForm));
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  alert('Form submitted successfully!');
+  form.reset();
+  submitBtn.disabled = true;
+  errors.forEach(err => err.textContent = '');
+});
+
+function validateForm() {
+  let valid = true;
+  if(nameInput.value.trim() === '') { errors[0].textContent = 'Name cannot be blank'; valid = false; } else { errors[0].textContent = ''; }
+  if(emailInput.value.trim() === '') { errors[1].textContent = 'Email cannot be blank'; valid = false; } 
+  else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) { errors[1].textContent = 'Email is not valid'; valid = false; } 
+  else { errors[1].textContent = ''; }
+  if(passwordInput.value.trim() === '') { errors[2].textContent = 'Password cannot be blank'; valid = false; } 
+  else if(passwordInput.value.length < 6) { errors[2].textContent = 'Password must be at least 6 characters'; valid = false; } 
+  else { errors[2].textContent = ''; }
+  submitBtn.disabled = !valid;
+}
+</script>
+
+</body>
+</html>
